@@ -25,7 +25,8 @@ if (packageJson.husky === undefined) {
 if (packageJson['lint-staged'] === undefined) {
   packageChanged = true
   packageJson['lint-staged'] = {
-    '*.js': 'eslint'
+    '*.js': 'eslint',
+    '*.ts': 'eslint'
   }
 }
 
