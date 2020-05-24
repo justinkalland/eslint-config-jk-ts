@@ -32,8 +32,13 @@ if (packageJson['lint-staged'] === undefined) {
 if (packageJson.eslintConfig === undefined) {
   packageChanged = true
   packageJson.eslintConfig = {
-    extends: 'jk'
+    extends: 'jk-ts'
   }
+}
+
+if (packageJson.scripts.lint === undefined) {
+  packageChanged = true
+  packageJson.scripts.lint = 'eslint .'
 }
 
 if (packageChanged) {
