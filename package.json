@@ -1,0 +1,45 @@
+{
+  "name": "eslint-config-jk-ts",
+  "version": "1.1.0",
+  "description": "Node.js lint setup and config that I use in my TypeScript projects (based on StandardJS).",
+  "repository": "github:justinkalland/eslint-config-jk-ts",
+  "homepage": "https://github.com/justinkalland/eslint-config-jk-ts#readme",
+  "bugs": {
+    "url": "https://github.com/justinkalland/eslint-config-jk-ts/issues"
+  },
+  "author": "Justin Kalland <justin@kalland.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha tests",
+    "postinstall": "scripts/postInstall.js",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-no-only-tests": "^2.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.2.0",
+    "nyc": "^15.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "eslintConfig": {
+    "extends": "jk"
+  }
+}
