@@ -40,8 +40,5 @@
   },
   "lint-staged": {
     "*.js": "eslint"
-  },
-  "eslintConfig": {
-    "extends": "jk"
   }
 }
