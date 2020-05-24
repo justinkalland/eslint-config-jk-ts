@@ -16,8 +16,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
     "eslint": "^7.1.0",
-    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-with-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-no-only-tests": "^2.4.0",
     "eslint-plugin-node": "^11.1.0",
@@ -29,7 +30,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.2.0",
-    "nyc": "^15.0.1"
+    "nyc": "^15.0.1",
+    "typescript": "^3.9.3"
   },
   "husky": {
     "hooks": {

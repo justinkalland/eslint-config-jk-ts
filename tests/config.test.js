@@ -3,6 +3,6 @@ const config = require('../')
 
 it('Test for basic config properties', () => {
   expect(config).to.be.a('object')
-  expect(config.extends).to.equal('standard')
+  expect(config.extends).to.equal('standard-with-typescript')
   expect(config.rules).to.be.a('object')
 })

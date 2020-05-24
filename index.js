@@ -1,15 +1,22 @@
 module.exports = {
-  extends: 'standard',
+  extends: 'standard-with-typescript',
   plugins: [
     'no-only-tests'
+  ],
+  parserOptions: {
+    project: './tsconfig.json'
+  },
+  ignorePatterns: [
+    'dist/**'
   ],
   rules: {
     'no-var': 'error',
     'prefer-const': 'error',
-    'no-only-tests/no-only-tests': 'error'
+    'no-only-tests/no-only-tests': 'error',
+    '@typescript-eslint/camelcase': 'off' // this is temp, see https://github.com/typescript-eslint/typescript-eslint/issues/2077
   },
   overrides: [{
-    files: ['tests/**', '*.test.js'],
+    files: ['tests/**', 'src/tests/**', '*.test.ts'],
     env: { mocha: true }
   }]
 }
