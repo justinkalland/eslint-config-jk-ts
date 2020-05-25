@@ -18,5 +18,10 @@ module.exports = {
   overrides: [{
     files: ['tests/**', 'src/tests/**', '*.test.ts'],
     env: { mocha: true }
+  }, {
+    files: ['*.test.ts'],
+    rules: {
+      '@typescript-eslint/no-unused-expressions': 'off'
+    }
   }]
 }
