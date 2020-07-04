@@ -17,7 +17,7 @@ module.exports = {
   },
   overrides: [{
     files: ['tests/**', 'src/tests/**', '*.test.ts'],
-    env: { mocha: true }
+    env: { mocha: true, jest: true }
   }, {
     files: ['*.test.ts'],
     rules: {
