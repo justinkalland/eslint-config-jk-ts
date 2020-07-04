@@ -1,15 +1,17 @@
-const expect = require('chai').expect
 const eslint = require('eslint')
 
-it('Load config with eslint to validate syntax', () => {
-  const CLIEngine = eslint.CLIEngine
+const cli = new eslint.CLIEngine({
+  useEslintrc: true
+})
 
-  const cli = new CLIEngine({
-    useEslintrc: false,
-    configFile: 'index.js'
-  })
-
+it('works with const', () => {
   const errorCount = cli.executeOnText('const foo = 1\nconst bar = function () {}\nbar(foo)\n').errorCount
 
-  expect(errorCount).to.equal(0)
+  expect(errorCount).toBe(0)
+})
+
+it('fails with var', () => {
+  const errorCount = cli.executeOnText('var foo = 1\nconst bar = function () {}\nbar(foo)\n').errorCount
+
+  expect(errorCount).toBe(1)
 })

@@ -1,8 +1,7 @@
-const expect = require('chai').expect
 const config = require('../')
 
 it('Test for basic config properties', () => {
-  expect(config).to.be.a('object')
-  expect(config.extends).to.equal('standard-with-typescript')
-  expect(config.rules).to.be.a('object')
+  expect(typeof config).toBe('object')
+  expect(config.extends).toBe('standard-with-typescript')
+  expect(typeof config.rules).toBe('object')
 })

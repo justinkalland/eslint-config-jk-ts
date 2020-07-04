@@ -11,7 +11,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha tests",
+    "test": "jest",
     "postinstall": "scripts/postInstall.js",
     "lint": "eslint ."
   },
@@ -28,9 +28,7 @@
     "lint-staged": "^10.2.6"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^7.2.0",
-    "nyc": "^15.0.1",
+    "jest": "^26.1.0",
     "typescript": "^3.9.3"
   },
   "husky": {
@@ -41,5 +39,6 @@
   "lint-staged": {
     "*.js": "eslint",
     "*.ts": "eslint"
-  }
+  },
+  "eslintConfig": {}
 }
