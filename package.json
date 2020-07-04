@@ -13,7 +13,11 @@
   "scripts": {
     "test": "jest",
     "postinstall": "scripts/postInstall.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "validate": "run-s test lint",
+    "prerelease": "git checkout master && git pull origin master && npm run validate",
+    "release": "standard-version",
+    "prepublishOnly": "npm run test"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^3.0.0",
@@ -28,12 +32,17 @@
     "lint-staged": "^10.2.6"
   },
   "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
     "jest": "^26.1.0",
+    "npm-run-all": "^4.1.5",
+    "standard-version": "^8.0.0",
     "typescript": "^3.9.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
