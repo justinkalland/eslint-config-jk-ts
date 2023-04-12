@@ -1,7 +1,7 @@
 module.exports = {
   extends: [
-    'standard-with-typescript',
-    'plugin:vue/vue3-recommended'
+    'plugin:vue/vue3-recommended',
+    'standard-with-typescript'
   ],
   plugins: [
     'no-only-tests'
@@ -15,8 +15,7 @@ module.exports = {
   rules: {
     'no-var': 'error',
     'prefer-const': 'error',
-    'no-only-tests/no-only-tests': 'error',
-    '@typescript-eslint/camelcase': 'off' // this is temp, see https://github.com/typescript-eslint/typescript-eslint/issues/2077
+    'no-only-tests/no-only-tests': 'error'
   },
   overrides: [{
     files: ['tests/**', 'src/tests/**', '*.test.ts'],

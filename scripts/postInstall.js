@@ -33,7 +33,7 @@ if (packageJson['lint-staged'] === undefined) {
 if (packageJson.eslintConfig === undefined) {
   packageChanged = true
   packageJson.eslintConfig = {
-    extends: 'jk-ts'
+    extends: './node_modules/@justinkalland/eslint-ts'
   }
 }
 
