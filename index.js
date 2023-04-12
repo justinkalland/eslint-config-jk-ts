@@ -1,5 +1,8 @@
 module.exports = {
-  extends: 'standard-with-typescript',
+  extends: [
+    'standard-with-typescript',
+    'plugin:vue/vue3-recommended'
+  ],
   plugins: [
     'no-only-tests'
   ],
